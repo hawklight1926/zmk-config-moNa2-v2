@@ -60,7 +60,6 @@
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
         force-awake; // ZMKがアクティブな間センサーを起きたままにする
-        smart-mode;  // 表面追跡の改善
     };
 };
 
