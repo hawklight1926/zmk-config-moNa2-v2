@@ -56,27 +56,27 @@
 
         swipe-to-left {
             bindings = <&kp LC(LEFT)>;
-            key-positions = <7 6>;
+            key-positions = <30 29>;
         };
 
         swipe-to-right {
             bindings = <&kp LC(RIGHT)>;
-            key-positions = <7 8>;
+            key-positions = <30 31>;
         };
 
         mission-controll {
             bindings = <&kp LC(UP_ARROW)>;
-            key-positions = <8 6>;
+            key-positions = <29 31>;
         };
 
         move-to-left-tab {
             bindings = <&kp LC(LS(TAB))>;
-            key-positions = <30 29>;
+            key-positions = <6 7>;
         };
 
         move-to-right-tab {
             bindings = <&kp LC(TAB)>;
-            key-positions = <31 30>;
+            key-positions = <8 7>;
         };
 
         back-page {
@@ -86,7 +86,7 @@
 
         forward-page {
             bindings = <&kp LG(RIGHT_BRACKET)>;
-            key-positions = <28 29>;
+            key-positions = <29 28>;
         };
     };
 
@@ -142,9 +142,9 @@
 
         mouse_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                  &msc SCRL_UP           &kp LC(LEFT)     &kp LC(RIGHT)  &kp LC(UP_ARROW)  &kp LC(DOWN)
-&trans  &trans  &trans  &trans  &trans            &trans                &msc SCRL_DOWN         &mkp MB1         &mkp MB2       &mkp MB3          &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans                &kp F11                &kp LS(LC(TAB))  &kp LC(TAB)    &trans            &trans
+&trans  &trans  &trans  &trans  &trans                                  &msc SCRL_DOWN         &kp LS(LC(TAB))  &kp LC(TAB)    &trans            &trans
+&trans  &trans  &trans  &trans  &trans            &trans                &msc SCRL_UP           &mkp MB1         &mkp MB2       &mkp MB3          &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans                &kp F11                &kp LC(LEFT)     &kp LC(RIGHT)  &kp LC(UP_ARROW)  &kp LC(DOWN_ARROW)
 &trans  &trans  &trans  &trans  &trans  &trans    &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)                                                    &trans
             >;
 
