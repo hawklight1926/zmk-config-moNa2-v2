@@ -68,6 +68,16 @@
             bindings = <&kp LC(UP_ARROW)>;
             key-positions = <8 6>;
         };
+
+        move-to-left-tab {
+            bindings = <&kp LC(LS(TAB))>;
+            key-positions = <30 29>;
+        };
+
+        move-to-right-tab {
+            bindings = <&kp LC(TAB)>;
+            key-positions = <31 30>;
+        };
     };
 
     macros {
