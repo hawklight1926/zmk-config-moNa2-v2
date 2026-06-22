@@ -67,29 +67,33 @@
 
 
 // Mouse gesture configuration for mg_tab_layer (layer 11)
-&zip_mouse_gesture {
-    always-active;
-    suppress-movement;
-    enable-eager-mode;
+/ {
+    zip_mouse_gesture_tab: zip_mouse_gesture_tab {
+        compatible = "zmk,input-processor-mouse-gesture";
+        #input-processor-cells = <0>;
+        always-active;
+        suppress-movement;
+        enable-eager-mode;
 
-    prev_tab {
-        pattern = <GESTURE_LEFT>;
-        bindings = <&kp LC(LS(TAB))>;
-    };
+        prev_tab {
+            pattern = <GESTURE_LEFT>;
+            bindings = <&kp LC(LS(TAB))>;
+        };
 
-    next_tab {
-        pattern = <GESTURE_RIGHT>;
-        bindings = <&kp LC(TAB)>;
-    };
+        next_tab {
+            pattern = <GESTURE_RIGHT>;
+            bindings = <&kp LC(TAB)>;
+        };
 
-    new_tab {
-        pattern = <GESTURE_UP>;
-        bindings = <&kp LG(T)>;
-    };
+        new_tab {
+            pattern = <GESTURE_UP>;
+            bindings = <&kp LG(T)>;
+        };
 
-    close_tab {
-        pattern = <GESTURE_DOWN>;
-        bindings = <&kp LG(W)>;
+        close_tab {
+            pattern = <GESTURE_DOWN>;
+            bindings = <&kp LG(W)>;
+        };
     };
 };
 
@@ -143,7 +147,7 @@
 
     mg_tab {
         layers = <11>;
-        input-processors = <&zip_mouse_gesture>;
+        input-processors = <&zip_mouse_gesture_tab>;
     };
 
     mg_swipe {
