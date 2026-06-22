@@ -16,7 +16,7 @@
 };
 
 &lt {
-    # layer/tapでタップしてもう一度押してホールドするとタップが連打されるまでの時間. default<300>ms
+    // layer/tapでタップしてもう一度押してホールドするとタップが連打されるまでの時間. default<300>ms
     quick-tap-ms = <0>;
     flavor = "balanced";
 };
