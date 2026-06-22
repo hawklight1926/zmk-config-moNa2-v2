@@ -216,5 +216,16 @@
 
             sensor-bindings = <&scroll_up_down>;
         };
+
+        mg_swipe_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &to 0
+            >;
+
+            sensor-bindings = <&scroll_up_down>;
+        };
     };
 };

@@ -94,6 +94,38 @@
 };
 
 
+// Mouse gesture configuration for mg_swipe_layer (layer 12)
+/ {
+    zip_mouse_gesture_swipe: zip_mouse_gesture_swipe {
+        compatible = "zmk,input-processor-mouse-gesture";
+        #input-processor-cells = <0>;
+        always-active;
+        suppress-movement;
+        enable-eager-mode;
+
+        prev_space {
+            pattern = <GESTURE_LEFT>;
+            bindings = <&kp LC(RIGHT)>;
+        };
+
+        next_space {
+            pattern = <GESTURE_RIGHT>;
+            bindings = <&kp LC(LEFT)>;
+        };
+
+        mission_ctrl {
+            pattern = <GESTURE_UP>;
+            bindings = <&kp LG(UP)>;
+        };
+
+        app_expose {
+            pattern = <GESTURE_DOWN>;
+            bindings = <&kp LG(DOWN)>;
+        };
+    };
+};
+
+
 // Overrides for the input listener node
 &trackball_central_listener {
     status = "okay";
@@ -112,6 +144,11 @@
     mg_tab {
         layers = <11>;
         input-processors = <&zip_mouse_gesture>;
+    };
+
+    mg_swipe {
+        layers = <12>;
+        input-processors = <&zip_mouse_gesture_swipe>;
     };
 
 };
