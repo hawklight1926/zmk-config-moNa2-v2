@@ -67,9 +67,9 @@
 };
 
 
-// Mouse gesture for mg_tab_layer (layer 11)
-// GESTURE_UP/DOWNはinvert-yによりY軸が反転するため物理方向と逆になる
 / {
+    // Mouse gesture for mg_tab_layer
+    // GESTURE_UP/DOWNはinvert-yによりY軸が反転するため物理方向と逆になる
     zip_mouse_gesture_tab: zip_mouse_gesture_tab {
         compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
@@ -98,6 +98,8 @@
         };
     };
 
+    // Mouse gesture for mg_swipe_layer
+    // GESTURE_UP/DOWNはinvert-yによりY軸が反転するため物理方向と逆になる
     zip_mouse_gesture_swipe: zip_mouse_gesture_swipe {
         compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
@@ -143,7 +145,7 @@
             <&zip_scroll_scaler 1 5>;                           //スクロール量を1/4倍
     };
 
-    mg_tab {
+    mouse_gesture_tab {
         layers = <LAYER_MG_TAB>;
         // suppress-movementが効かない場合のフォールバックとしてzip_xy_scaler 0 1でXY値を0にする
         input-processors =
@@ -151,8 +153,9 @@
             <&zip_xy_scaler 0 1>;
     };
 
-    mg_swipe {
+    mouse_gesture_swipe {
         layers = <LAYER_MG_SWIPE>;
+        // suppress-movementが効かない場合のフォールバックとしてzip_xy_scaler 0 1でXY値を0にする
         input-processors =
             <&zip_mouse_gesture_swipe>,
             <&zip_xy_scaler 0 1>;
