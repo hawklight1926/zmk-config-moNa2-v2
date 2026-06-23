@@ -74,7 +74,6 @@
         compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
         always-active;
-        suppress-movement;
         enable-eager-mode;
 
         prev_tab {
@@ -102,7 +101,6 @@
         compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
         always-active;
-        suppress-movement;
         enable-eager-mode;
 
         prev_space {
