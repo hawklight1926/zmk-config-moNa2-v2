@@ -161,7 +161,7 @@
 &kp Q             &kp W         &kp E         &kp R        &kp T                                          &kp Y        &kp U  &kp I      &kp O    &lt 2 P
 &kp A             &kp S         &kp D         &kp F        &kp G                       &kp LEFT_BRACKET   &kp H        &kp J  &kp K      &kp L    &lt 1 MINUS
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V        &kp B        &lt 6 TAB      &kp RIGHT_BRACKET  &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_ALT  &kp LEFT_WIN  &lt 1 LANG2  &lt 7 SPACE  &lt 5 LANG1    &kp BACKSPACE      &lt 3 ENTER                             &kp ESCAPE
+&kp LCTRL         &kp LEFT_ALT  &kp LEFT_WIN  &lt 1 LANG2  &lt 7 SPACE  &lt 5 LANG1    &kp BACKSPACE      &lt 3 ENTER                             &mt RIGHT_CONTROL ESCAPE
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -169,10 +169,10 @@
 
         mouse_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                   &kp F11         &kp LC(LEFT_ARROW)  &kp LC(RIGHT_ARROW)  &kp LC(UP_ARROW)     &mo 2
-&trans  &trans  &trans  &trans  &trans            &kp LG(LEFT_BRACKET)   &msc SCRL_DOWN  &mkp MB1            &mkp MB2             &mkp MB3             &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LG(RIGHT_BRACKET)  &msc SCRL_UP    &kp LC(LS(TAB))     &kp LC(TAB)          &kp C_VOICE_COMMAND  &to 1
-&trans  &trans  &trans  &trans  &trans  &trans    &trans                 &trans                                                                        &to 0
+&trans                &trans               &trans                   &trans                 &trans                                                  &kp F11         &kp LC(LEFT_ARROW)  &kp LC(RIGHT_ARROW)  &kp LC(UP_ARROW)     &mo 2
+&trans                &trans               &trans                   &trans                 &trans                           &kp LG(LEFT_BRACKET)   &msc SCRL_DOWN  &mkp MB1            &mkp MB2             &mkp MB3             &to 1
+&trans                &trans               &trans                   &trans                 &trans  &trans                   &kp LG(RIGHT_BRACKET)  &msc SCRL_UP    &kp LC(LS(TAB))     &kp LC(TAB)          &kp C_VOICE_COMMAND  &to 0
+&to_layer0_with_ctrl  &to_layer0_with_alt  &to_layer0_with_command  &to_layer0_with_lang2  &trans  &to_layer0_with_lang1    &trans                 &trans                                                                        &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -180,10 +180,10 @@
 
         scroll_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
+&trans     &trans    &trans            &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans     &trans    &trans            &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans    &trans            &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&kp LCTRL  &kp LALT  &kp LEFT_COMMAND  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
