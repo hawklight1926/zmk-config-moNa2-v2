@@ -57,7 +57,11 @@
         to_layer0_with_command: to_layer0_with_command {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &kp LEFT_COMMAND>;
+            bindings =
+                <&macro_press &kp LEFT_COMMAND>,
+                <&to 0>,
+                <&macro_pause_for_release>,
+                <&macro_release &kp LEFT_COMMAND>;
             label = "TO_LAYER0_WITH_COMMAND";
         };
     };
