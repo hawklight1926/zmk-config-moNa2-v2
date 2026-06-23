@@ -184,10 +184,10 @@
 
         scroll_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
+&trans     &trans    &trans            &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans     &trans    &trans            &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans    &trans            &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&kp LCTRL  &kp LALT  &kp LEFT_COMMAND  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
