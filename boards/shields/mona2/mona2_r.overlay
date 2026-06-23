@@ -75,6 +75,7 @@
         #input-processor-cells = <0>;
         always-active;
         enable-eager-mode;
+        gesture-cooldown-ms = <100>;
 
         prev_tab {
             pattern = <GESTURE_LEFT>;
@@ -102,6 +103,7 @@
         #input-processor-cells = <0>;
         always-active;
         enable-eager-mode;
+        gesture-cooldown-ms = <100>;
 
         prev_space {
             pattern = <GESTURE_LEFT>;
