@@ -23,7 +23,14 @@
 };
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        to_mouse_layer {
+            bindings = <&to 1>;
+            key-positions = <9 20>;
+        };
+    };
 
     macros {
         to_layer_0: to_layer_0 {
@@ -171,7 +178,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans                                   &kp F11         &kp LC(LEFT_ARROW)  &kp LC(RIGHT_ARROW)  &kp LC(UP_ARROW)     &mo 2
 &trans  &trans  &trans  &trans  &trans            &kp LG(LEFT_BRACKET)   &msc SCRL_DOWN  &mkp MB1            &mkp MB2             &mkp MB3             &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LG(RIGHT_BRACKET)  &msc SCRL_UP    &kp LC(LS(TAB))     &kp LC(TAB)          &kp C_VOICE_COMMAND  &to 1
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LG(RIGHT_BRACKET)  &msc SCRL_UP    &kp LC(LS(TAB))     &kp LC(TAB)          &kp C_VOICE_COMMAND  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans                 &trans                                                                        &to 0
             >;
 
