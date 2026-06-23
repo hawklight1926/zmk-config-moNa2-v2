@@ -2,6 +2,7 @@
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <dt-bindings/zmk/keys.h>
+#include <mouse-gesture.dtsi>
 #include "mona2_layers.h"
 
 
@@ -66,37 +67,63 @@
 };
 
 
-// Keybind processor for mg_tab_layer (layer 11)
-// bindings order: RIGHT, LEFT, DOWN, UP
-// INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT で
-// センサーのinvert-x/invert-yを打ち消し、物理方向と一致させる
+// Mouse gesture for mg_tab_layer (layer 11)
+// GESTURE_UP/DOWNはinvert-yによりY軸が反転するため物理方向と逆になる
 / {
-    zip_keybind_tab: zip_keybind_tab {
-        compatible = "zmk,input-processor-keybind";
+    zip_mouse_gesture_tab: zip_mouse_gesture_tab {
+        compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
-        track_remainders;
-        tick = <40>;
-        wait-ms = <0>;
-        tap-ms = <10>;
-        bindings =
-            <&kp LC(TAB)>,      // RIGHT → 次のタブ
-            <&kp LC(LS(TAB))>,  // LEFT  → 前のタブ
-            <&kp LG(W)>,        // DOWN  → タブを閉じる
-            <&kp LG(T)>;        // UP    → 新規タブ
+        always-active;
+        suppress-movement;
+        enable-eager-mode;
+
+        prev_tab {
+            pattern = <GESTURE_LEFT>;
+            bindings = <&kp LC(LS(TAB))>;
+        };
+
+        next_tab {
+            pattern = <GESTURE_RIGHT>;
+            bindings = <&kp LC(TAB)>;
+        };
+
+        new_tab {
+            pattern = <GESTURE_DOWN>;
+            bindings = <&kp LG(T)>;
+        };
+
+        close_tab {
+            pattern = <GESTURE_UP>;
+            bindings = <&kp LG(W)>;
+        };
     };
 
-    zip_keybind_swipe: zip_keybind_swipe {
-        compatible = "zmk,input-processor-keybind";
+    zip_mouse_gesture_swipe: zip_mouse_gesture_swipe {
+        compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
-        track_remainders;
-        tick = <40>;
-        wait-ms = <0>;
-        tap-ms = <10>;
-        bindings =
-            <&kp LC(RIGHT)>,    // RIGHT → 右の仮想デスクトップへ
-            <&kp LC(LEFT)>,     // LEFT  → 左の仮想デスクトップへ
-            <&kp LC(DOWN)>,     // DOWN  → App Expose
-            <&kp LC(UP)>;       // UP    → Mission Control
+        always-active;
+        suppress-movement;
+        enable-eager-mode;
+
+        prev_space {
+            pattern = <GESTURE_LEFT>;
+            bindings = <&kp LC(RIGHT)>;
+        };
+
+        next_space {
+            pattern = <GESTURE_RIGHT>;
+            bindings = <&kp LC(LEFT)>;
+        };
+
+        mission_ctrl {
+            pattern = <GESTURE_DOWN>;
+            bindings = <&kp LC(UP)>;
+        };
+
+        app_expose {
+            pattern = <GESTURE_UP>;
+            bindings = <&kp LC(DOWN)>;
+        };
     };
 };
 
@@ -118,16 +145,17 @@
 
     mg_tab {
         layers = <LAYER_MG_TAB>;
+        // suppress-movementが効かない場合のフォールバックとしてzip_xy_scaler 0 1でXY値を0にする
         input-processors =
-            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-            <&zip_keybind_tab>;
+            <&zip_mouse_gesture_tab>,
+            <&zip_xy_scaler 0 1>;
     };
 
     mg_swipe {
         layers = <LAYER_MG_SWIPE>;
         input-processors =
-            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-            <&zip_keybind_swipe>;
+            <&zip_mouse_gesture_swipe>,
+            <&zip_xy_scaler 0 1>;
     };
 
 };
