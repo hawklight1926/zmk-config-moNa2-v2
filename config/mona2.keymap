@@ -220,10 +220,10 @@
 
         fn_layer {
             bindings = <
-&kp LS(LG(NUMBER_3))  &kp F7  &kp F8  &kp F9  &kp F12                    &kp C_PREV  &kp C_PP  &kp C_NEXT  &kp C_MUTE  &trans
-&kp LG(LS(NUMBER_4))  &kp F4  &kp F5  &kp F6  &kp F11            &trans  &mo 11      &mo 12    &trans      &trans      &trans
-&kp LS(LG(N5))        &kp F1  &kp F2  &kp F3  &kp F10  &trans    &trans  &trans      &trans    &trans      &trans      &trans
-&trans                &trans  &trans  &trans  &trans   &trans    &trans  &trans                                        &trans
+&kp LS(LG(NUMBER_3))  &kp F7  &kp F8  &kp F9  &kp F12                                 &kp C_PREV  &kp C_PP  &kp C_NEXT  &kp C_MUTE  &trans
+&kp LG(LS(NUMBER_4))  &kp F4  &kp F5  &kp F6  &kp F11                         &trans  &mo 11      &mo 12    &trans      &trans      &trans
+&kp LS(LG(N5))        &kp F1  &kp F2  &kp F3  &kp F10  &kp C_VOICE_COMMAND    &trans  &trans      &trans    &trans      &trans      &trans
+&trans                &trans  &trans  &trans  &trans   &trans                 &trans  &trans                                        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
