@@ -30,6 +30,36 @@
             bindings = <&to 1>;
             key-positions = <9 20>;
         };
+
+        left-click {
+            bindings = <&mkp LCLK>;
+            key-positions = <17 18>;
+        };
+
+        right-click {
+            bindings = <&mkp RCLK>;
+            key-positions = <18 19>;
+        };
+
+        middle-click {
+            bindings = <&mkp MCLK>;
+            key-positions = <19 17>;
+        };
+
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
+        };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <12 13>;
+        };
+
+        shift-tab {
+            bindings = <&kp LS(TAB)>;
+            key-positions = <12 11>;
+        };
     };
 
     macros {
