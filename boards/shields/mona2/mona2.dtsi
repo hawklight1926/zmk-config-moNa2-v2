@@ -99,12 +99,8 @@
 
     left_encoder: encoder_left {
         compatible = "alps,ec11";
-        // a-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        // b-gpios = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        // 基板側に既にプルアップ+デバウンス回路がある場合、内蔵GPIO_PULL_UPとの
-        // 抵抗合成でRC時定数が伸び、速い回転で信号が安定せず取りこぼす症状が出るため外した
-        a-gpios = <&xiao_d 5 GPIO_ACTIVE_HIGH>;
-        b-gpios = <&xiao_d 0 GPIO_ACTIVE_HIGH>;
+        a-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <24>;
         status = "disabled";
     };
